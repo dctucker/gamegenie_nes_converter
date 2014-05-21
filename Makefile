@@ -1,8 +1,8 @@
 
 .PHONY: clean
 
-ggnesconv:
-	gcc nes.c -o ggnesconv
+all:
+	gcc ggnesconv.c -o ggnesconv
 
 clean:
 	rm ggnesconv
