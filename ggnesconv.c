@@ -107,7 +107,7 @@ void nes_to_hex(char *code)
 	if( len == 6 )
 	{
 		data = ((n[1] & 7) << 4) | ((n[0] & 8) << 4) | (n[0] & 7) | (n[5] & 8);
-		printf("address data : 0x%04x 0x%02x", address, data);
+		printf("address data : 0x%04x 0x%02x\n", address, data);
 	}
 	else if( len == 8 )
 	{
