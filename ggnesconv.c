@@ -5,7 +5,8 @@ char nes_chars[] = { 'A', 'P', 'Z', 'L', 'G', 'I', 'T', 'Y', 'E', 'O', 'X', 'U',
 
 unsigned int nes_char_int(char c) // inefficient but effective
 {
-	for(int i=0; i < 16; i++)
+	int i;
+	for(i=0; i < 16; i++)
 	{
 		if( c == nes_chars[i] )
 			return i;
@@ -16,7 +17,8 @@ unsigned int nes_char_int(char c) // inefficient but effective
 void hex_to_nes(unsigned int address, unsigned int data, unsigned int compare)
 {
 	int n[8];
-	for(int i=0; i < 8; i++)
+	int i;
+	for(i=0; i < 8; i++)
 	{
 		n[i] = 0;
 	}
@@ -44,7 +46,7 @@ void hex_to_nes(unsigned int address, unsigned int data, unsigned int compare)
 	n[7] |= 7 & (compare >> 4);
 	n[7] |= 8 & data;
 
-	for(int i=0; i < 8; i++)
+	for(i=0; i < 8; i++)
 	{
 		printf("%c", nes_chars[ n[i] ] );
 	}
@@ -54,7 +56,8 @@ void hex_to_nes(unsigned int address, unsigned int data, unsigned int compare)
 void hex_to_nes6(unsigned int address, unsigned int data)
 {
 	int n[8];
-	for(int i=0; i < 6; i++)
+	int i;
+	for(i=0; i < 6; i++)
 	{
 		n[i] = 0;
 	}
@@ -77,7 +80,7 @@ void hex_to_nes6(unsigned int address, unsigned int data)
 	n[5] |= 7 & (address >> 8);
 	n[5] |= 8 & data;
 
-	for(int i=0; i < 6; i++)
+	for(i=0; i < 6; i++)
 	{
 		printf("%c", nes_chars[ n[i] ] );
 	}
@@ -89,8 +92,8 @@ void nes_to_hex(char *code)
 	int data, address, compare;
 	int n[8];
 	int len = strlen(code);
-
-	for( int i=0; i < len; i++)
+	int i;
+	for( i=0; i < len; i++)
 	{
 		n[i] = nes_char_int(code[i]);
 	}
