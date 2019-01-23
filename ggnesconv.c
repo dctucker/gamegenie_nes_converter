@@ -30,6 +30,7 @@ void hex_to_nes(unsigned int address, unsigned int data, unsigned int compare)
 	n[1] |= 7 & ( data >> 4 ); //
 
 	n[2] |= 7 & (address >> 4);
+	n[2] |= 8;
 
 	n[3] |= 7 & (address >> 12);
 	n[3] |= 8 & address;
